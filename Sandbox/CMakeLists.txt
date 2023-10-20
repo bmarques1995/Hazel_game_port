@@ -9,9 +9,9 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_PREFIX_PATH})
 
 set(WINDOWED_ARG)
 
-# if(WIN32)
-# set(WINDOWED_ARG WIN32)
-# endif()
+if(WIN32)
+set(WINDOWED_ARG WIN32)
+endif()
 
 add_executable(${TARGET_NAME} ${WINDOWED_ARG} ${SDB_HDRS} ${SDB_SRCS})
 target_include_directories(${TARGET_NAME} PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/src")
