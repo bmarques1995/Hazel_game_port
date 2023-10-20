@@ -4,9 +4,6 @@
 [submodule "modules/glfw"]
 	path = modules/glfw
 	url = https://github.com/glfw/glfw.git
-[submodule "modules/glew"]
-	path = modules/glew
-	url = https://github.com/nigels-com/glew.git
 [submodule "modules/imgui/imgui"]
 	path = modules/imgui/imgui
 	url = https://github.com/ocornut/imgui.git
@@ -16,3 +13,6 @@
 [submodule "modules/stb/stb"]
 	path = modules/stb/stb
 	url = https://github.com/nothings/stb
+[submodule "modules/glad"]
+	path = modules/glad
+	url = https://github.com/bmarques1995/glad.git
