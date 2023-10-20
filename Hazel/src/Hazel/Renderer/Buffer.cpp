@@ -5,30 +5,26 @@
 
 #include "Platform/OpenGL/OpenGLBuffer.hpp"
 
-namespace Hazel {
-
-	Ref<VertexBuffer> VertexBuffer::Create(float* vertices, uint32_t size)
+Hazel::Ref<Hazel::VertexBuffer> Hazel::VertexBuffer::Create(float* vertices, uint32_t size)
+{
+	switch (Renderer::GetAPI())
 	{
-		switch (Renderer::GetAPI())
-		{
-			case RendererAPI::API::None:    HZ_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
-			case RendererAPI::API::OpenGL:  return CreateRef<OpenGLVertexBuffer>(vertices, size);
-		}
-
-		HZ_CORE_ASSERT(false, "Unknown RendererAPI!");
-		return nullptr;
+		case RendererAPI::API::None:    HZ_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
+		case RendererAPI::API::OpenGL:  return CreateRef<OpenGLVertexBuffer>(vertices, size);
 	}
 
-	Ref<IndexBuffer> IndexBuffer::Create(uint32_t* indices, uint32_t size)
-	{
-		switch (Renderer::GetAPI())
-		{
-			case RendererAPI::API::None:    HZ_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
-			case RendererAPI::API::OpenGL:  return CreateRef<OpenGLIndexBuffer>(indices, size);
-		}
+	HZ_CORE_ASSERT(false, "Unknown RendererAPI!");
+	return nullptr;
+}
 
-		HZ_CORE_ASSERT(false, "Unknown RendererAPI!");
-		return nullptr;
+Hazel::Ref<Hazel::IndexBuffer> Hazel::IndexBuffer::Create(uint32_t* indices, uint32_t size)
+{
+	switch (Renderer::GetAPI())
+	{
+		case RendererAPI::API::None:    HZ_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
+		case RendererAPI::API::OpenGL:  return CreateRef<OpenGLIndexBuffer>(indices, size);
 	}
 
+	HZ_CORE_ASSERT(false, "Unknown RendererAPI!");
+	return nullptr;
 }
