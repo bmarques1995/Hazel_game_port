@@ -64,12 +64,13 @@ namespace Hazel {
 			}
 			else
 			{
-				HZ_CORE_ERROR("Could not read from file '{0}'", filepath);
+				Console::CoreError("Could not read from file '{0}'", filepath);
 			}
 		}
 		else
 		{
-			HZ_CORE_ERROR("Could not open file '{0}'", filepath);
+			//CoreError
+			Console::CoreError("Could not open file '{0}'", filepath);
 		}
 
 		return result;
@@ -130,7 +131,7 @@ namespace Hazel {
 
 				glDeleteShader(shader);
 
-				HZ_CORE_ERROR("{0}", infoLog.data());
+				Console::CoreError("{0}", infoLog.data());
 				HZ_CORE_ASSERT(false, "Shader compilation failure!");
 				break;
 			}
@@ -162,7 +163,7 @@ namespace Hazel {
 			for (auto id : glShaderIDs)
 				glDeleteShader(id);
 
-			HZ_CORE_ERROR("{0}", infoLog.data());
+			Console::CoreError("{0}", infoLog.data());
 			HZ_CORE_ASSERT(false, "Shader link failure!");
 			return;
 		}

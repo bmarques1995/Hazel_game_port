@@ -7,7 +7,7 @@ extern Hazel::Application* Hazel::CreateApplication();
 
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow)
 {
-	Hazel::Log::Init();
+	Hazel::Console::Init();
 
 	HZ_PROFILE_BEGIN_SESSION("Startup", "HazelProfile-Startup.json");
 	auto app = Hazel::CreateApplication();

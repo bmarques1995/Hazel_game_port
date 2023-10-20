@@ -19,10 +19,11 @@ namespace Hazel {
 		int status = gladLoadGL((GLADloadfunc)glfwGetProcAddress);
 		HZ_CORE_ASSERT(status, "Failed to initialize Glad!");
 
-		HZ_CORE_INFO("OpenGL Info:");
-		HZ_CORE_INFO("  Vendor: {0}", reinterpret_cast<const char*>(glGetString(GL_VENDOR)));
-		HZ_CORE_INFO("  Renderer: {0}", reinterpret_cast<const char*>(glGetString(GL_RENDERER)));
-		HZ_CORE_INFO("  Version: {0}", reinterpret_cast<const char*>(glGetString(GL_VERSION)));
+		//CoreLog
+		Console::CoreLog("OpenGL Info:");
+		Console::CoreLog("  Vendor: {0}", reinterpret_cast<const char*>(glGetString(GL_VENDOR)));
+		Console::CoreLog("  Renderer: {0}", reinterpret_cast<const char*>(glGetString(GL_RENDERER)));
+		Console::CoreLog("  Version: {0}", reinterpret_cast<const char*>(glGetString(GL_VERSION)));
 
 	#ifdef HZ_ENABLE_ASSERTS
 		int versionMajor;
