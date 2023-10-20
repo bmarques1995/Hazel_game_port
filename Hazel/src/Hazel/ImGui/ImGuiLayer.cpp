@@ -1,11 +1,11 @@
-#include "hzpch.h"
-#include "Hazel/ImGui/ImGuiLayer.h"
+#include "hzpch.hpp"
+#include "Hazel/ImGui/ImGuiLayer.hpp"
 
 #include <imgui.h>
 #include <backends/imgui_impl_glfw.h>
 #include <backends/imgui_impl_opengl3.h>
 
-#include "Hazel/Core/Application.h"
+#include "Hazel/Core/Application.hpp"
 
 // TEMPORARY
 #include <GLFW/glfw3.h>

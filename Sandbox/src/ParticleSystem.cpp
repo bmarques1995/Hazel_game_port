@@ -1,6 +1,6 @@
-#include "ParticleSystem.h"
+#include "ParticleSystem.hpp"
 
-#include "Random.h"
+#include "Random.hpp"
 
 #define GLM_ENABLE_EXPERIMENTAL
 #include <glm/gtx/compatibility.hpp>

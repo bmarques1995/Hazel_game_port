@@ -1,4 +1,4 @@
-#include "Player.h"
+#include "Player.hpp"
 
 #include <imgui/imgui.h>
 #include <glm/gtc/matrix_transform.hpp>

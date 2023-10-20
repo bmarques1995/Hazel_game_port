@@ -1,5 +1,5 @@
-#include "hzpch.h"
-#include "Platform/OpenGL/OpenGLTexture.h"
+#include "hzpch.hpp"
+#include "Platform/OpenGL/OpenGLTexture.hpp"
 
 #include <stb/stb_image.h>
 

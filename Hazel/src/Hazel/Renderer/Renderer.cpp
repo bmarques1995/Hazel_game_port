@@ -1,6 +1,6 @@
-#include "hzpch.h"
-#include "Hazel/Renderer/Renderer.h"
-#include "Hazel/Renderer/Renderer2D.h"
+#include "hzpch.hpp"
+#include "Hazel/Renderer/Renderer.hpp"
+#include "Hazel/Renderer/Renderer2D.hpp"
 
 namespace Hazel {
 

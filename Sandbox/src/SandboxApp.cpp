@@ -1,7 +1,7 @@
-#include <Hazel.h>
-#include <Hazel/Core/EntryPoint.h>
+#include <Hazel.hpp>
+#include <Hazel/Core/EntryPoint.hpp>
 
-#include "GameLayer.h"
+#include "GameLayer.hpp"
 
 class Sandbox : public Hazel::Application
 {

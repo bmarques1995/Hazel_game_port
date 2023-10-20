@@ -1,5 +1,5 @@
-#include "hzpch.h"
-#include "Console.h"
+#include "hzpch.hpp"
+#include "Console.hpp"
 
 #include <chrono>
 #include <spdlog/sinks/dup_filter_sink.h>

@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.22)
 
 set(TARGET_NAME Hazel)
 
-file(GLOB_RECURSE HZ_HDRS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "./src/*.h")
+file(GLOB_RECURSE HZ_HDRS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "./src/*.hpp")
 file(GLOB_RECURSE HZ_SRCS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "./src/*.cpp")
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_PREFIX_PATH})
@@ -19,7 +19,7 @@ endif()
 find_file(STB_TARGET NAMES "stb_image.h" PATHS "${CMAKE_INSTALL_PREFIX}/include/stb" REQUIRED)
 
 add_library(${TARGET_NAME} STATIC ${HZ_HDRS} ${HZ_SRCS})
-target_precompile_headers(${TARGET_NAME} PRIVATE ./src/hzpch.h)
+target_precompile_headers(${TARGET_NAME} PRIVATE ./src/hzpch.hpp)
 target_include_directories(${TARGET_NAME} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/src" "${CMAKE_PREFIX_PATH}/include" "${CMAKE_PREFIX_PATH}/include/imgui")
 target_link_directories(${TARGET_NAME} PUBLIC "${CMAKE_PREFIX_PATH}/lib")
 target_link_libraries(${TARGET_NAME} PUBLIC spdlog::spdlog glad::gladstatic opengl32 glfw imgui)

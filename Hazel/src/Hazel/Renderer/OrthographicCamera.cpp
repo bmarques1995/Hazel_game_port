@@ -1,5 +1,5 @@
-#include "hzpch.h"
-#include "Hazel/Renderer/OrthographicCamera.h"
+#include "hzpch.hpp"
+#include "Hazel/Renderer/OrthographicCamera.hpp"
 
 #include <glm/gtc/matrix_transform.hpp>
 
