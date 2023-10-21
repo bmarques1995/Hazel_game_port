@@ -31,9 +31,26 @@ void Hazel::OpenGLContext::Init()
 
 	HZ_CORE_ASSERT(versionMajor > 4 || (versionMajor == 4 && versionMinor >= 5), "Hazel requires at least OpenGL version 4.5!");
 #endif
+
+	SetVSync(true);
 }
 
-void Hazel::OpenGLContext::SwapBuffers()
+void Hazel::OpenGLContext::Present()
 {
 	glfwSwapBuffers(m_WindowHandle);
+}
+
+void Hazel::OpenGLContext::SetVSync(bool enabled)
+{
+	if (enabled)
+		glfwSwapInterval(1);
+	else
+		glfwSwapInterval(0);
+
+	m_VSync = enabled;
+}
+
+bool Hazel::OpenGLContext::IsVSync()
+{
+	return m_VSync;
 }

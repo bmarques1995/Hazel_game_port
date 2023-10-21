@@ -12,9 +12,13 @@ namespace Hazel {
 		OpenGLContext(GLFWwindow* windowHandle);
 
 		virtual void Init() override;
-		virtual void SwapBuffers() override;
+		virtual void Present() override;
+
+		virtual void SetVSync(bool enabled) override;
+		virtual bool IsVSync() override;
 	private:
 		GLFWwindow* m_WindowHandle;
+		bool m_VSync = false;
 	};
 
 }

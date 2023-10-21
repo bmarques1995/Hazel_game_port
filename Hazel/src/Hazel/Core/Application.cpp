@@ -18,6 +18,9 @@ Hazel::Application::Application()
 	m_Window = Window::Create();
 	m_Window->SetEventCallback(HZ_BIND_EVENT_FN(Application::OnEvent));
 
+	m_Context = GraphicsContext::Create(m_Window->GetNativeWindow());
+	m_Context->Init();
+
 	Renderer::Init();
 
 	m_ImGuiLayer = new ImGuiLayer();
@@ -73,6 +76,7 @@ void Hazel::Application::Run()
 		m_ImGuiLayer->End();
 
 		m_Window->OnUpdate();
+		m_Context->Present();
 	}
 }
 

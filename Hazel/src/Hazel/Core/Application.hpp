@@ -3,6 +3,7 @@
 #include "Hazel/Core/Core.hpp"
 
 #include "Hazel/Core/Window.hpp"
+#include "Hazel/Renderer/GraphicsContext.hpp"
 #include "Hazel/Core/LayerStack.hpp"
 #include "Hazel/Events/Event.hpp"
 #include "Hazel/Events/ApplicationEvent.hpp"
@@ -34,6 +35,7 @@ namespace Hazel {
 		bool OnWindowResize(WindowResizeEvent& e);
 	private:
 		std::unique_ptr<Window> m_Window;
+		Scope<GraphicsContext> m_Context;
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		bool m_Minimized = false;

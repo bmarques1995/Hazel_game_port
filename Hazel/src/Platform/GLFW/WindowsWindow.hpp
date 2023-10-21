@@ -20,8 +20,6 @@ namespace Hazel {
 
 		// Window attributes
 		inline void SetEventCallback(const EventCallbackFn& callback) override { m_Data.EventCallback = callback; }
-		void SetVSync(bool enabled) override;
-		bool IsVSync() const override;
 
 		inline virtual void* GetNativeWindow() const { return m_Window; }
 	private:
@@ -29,13 +27,12 @@ namespace Hazel {
 		virtual void Shutdown();
 	private:
 		GLFWwindow* m_Window;
-		Scope<GraphicsContext> m_Context;
+		
 
 		struct WindowData
 		{
 			std::string Title;
 			unsigned int Width, Height;
-			bool VSync;
 
 			EventCallbackFn EventCallback;
 		};
